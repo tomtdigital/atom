@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin-left: 1rem;
+}
+
+img{
+    width: 100%;
+    
+}
+
+
+/*Day*/
+
+
+.sky{
+    background-image: url(./img/sky.jpg);
+    background-size: cover;
+}
+
+.trees{
+    background-color: #003f28;
+    z-index: 0;
+    margin-top: -1rem;
+}
+
+.red-op{
+    opacity: 0.5;
+}
+
+.trees h1{
+    color: #fff;
+}
+
+.water{
+    background-image: url(./img/skyref.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.rocks{
+    background-color: #adadad;
+    z-index: 2;
+    margin-top: -1rem;
+}
+
+
+
+
+/*Night*/
+
+
+
+.night-sky{
+    background-image: url(./img/skynight.jpg);
+    background-size: cover;
+}
+
+.night-trees{
+    background-color:#000;
+    z-index: 0;
+    margin-top: -1rem;
+}
+
+
+.night-sky h1{
+    color: #fff;
+}
+
+.night-trees h1{
+    color: #fff;
+}
+
+.night-water h1{
+    color: #fff;
+}
+
+.night-rocks h1{
+    color: #fff;
+}
+
+.night-water{
+    background-image: url(./img/skynightref.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.night-rocks{
+    background-color: #000;
+    z-index: 2;
+    margin-top: -1rem;
+}
