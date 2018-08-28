@@ -49,6 +49,7 @@ def begin():
 					begin()
 				elif again == 'x':
 					print ('Goodbye!')
+					exit()
 				#In case they enter a different value
 				else: 
 					play_again()
@@ -57,6 +58,8 @@ def begin():
 			play_again()
 	
 	#If the user changes their mind about the amount of numbers being called out. 		
+	elif confirm_rounds == 'n':
+		begin()
 	else :
 		begin()
 
