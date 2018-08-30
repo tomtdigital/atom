@@ -26,7 +26,7 @@ def begin():
 		#To start the game, the user can hit ENTER. Any other value is also accepted to avoid errors.
 		if ready >= '':
 			#The game has started, and a variable is declared as a random number between 0 and 90
-			next_num = random.randint(1,91)
+			next_num = random.randint(1,90)
 			#A list is declared, that will store each number called
 			already_called = []
 			#A function is declared. It prints a random number, and pauses for a set time to allow the bingo caller to announce it.
@@ -44,7 +44,7 @@ def begin():
 			for x in range (no_of_rounds):
 				play_bingo()
 				#Re-declaring the variable resets the number after it has been called.
-				next_num = random.randint(1,91)
+				next_num = random.randint(1,90)
 			#When all numbers are called...
 			print ('Total numbers reached.')
 			time.sleep(2)
