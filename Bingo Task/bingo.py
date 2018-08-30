@@ -26,25 +26,26 @@ def begin():
 		#To start the game, the user can hit ENTER. Any other value is also accepted to avoid errors.
 		if ready >= '':
 			#The game has started, and a variable is declared as a random number between 0 and 90
-			next_num = random.randint(1,90)
-			#A list is declared, that will store each number called
+			next_num = random.randint(1,91)
+			#A list is created for numbers already called to go in
 			already_called = []
-			#A function is declared. It prints a random number, and pauses for a set time to allow the bingo caller to announce it.
-			def play_bingo():
-				#Resets if the number has already been called
+			#A while loop is initiated, so long as x is less than the number of rounds inputted on line 16
+			x = 0
+			while x < no_of_rounds:
+				#The number is reset if it has already been called; x stays the same
 				if next_num in already_called:
-					play_bingo()
-				#Otherwise, the number is stored with business as usual
-				else:
-					print (next_num)
+					next_num = random.randint(1,91)
+				#If the number hasn't been called, then it is included in the list, printed, and reset. x then increases by 1						
+				elif next_num not in already_called:
 					already_called.append(next_num)
-					print ('Confirming next number...')
-					time.sleep(5)
-			#This function then runs for the amount of times that was earlier inputted on line 16	
-			for x in range (no_of_rounds):
-				play_bingo()
-				#Re-declaring the variable resets the number after it has been called.
-				next_num = random.randint(1,90)
+					print (next_num)
+					next_num = random.randint(1,91)
+					time.sleep(5)	
+					x +=1
+				#Ends the loop when conditions met				
+				else:
+					break
+				
 			#When all numbers are called...
 			print ('Total numbers reached.')
 			time.sleep(2)
@@ -57,8 +58,6 @@ def begin():
 					begin()
 				elif again == 'x':
 					print ('Goodbye!')
-					time.sleep(2)
-					exit()
 				#In case they enter a different value
 				else: 
 					play_again()
@@ -67,8 +66,6 @@ def begin():
 			play_again()
 	
 	#If the user changes their mind about the amount of numbers being called out. 		
-	elif confirm_rounds == 'n':
-		begin()
 	else :
 		begin()
 
