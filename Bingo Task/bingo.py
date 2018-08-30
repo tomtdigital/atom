@@ -27,11 +27,19 @@ def begin():
 		if ready >= '':
 			#The game has started, and a variable is declared as a random number between 0 and 90
 			next_num = random.randint(1,91)
+			#A list is declared, that will store each number called
+			already_called = []
 			#A function is declared. It prints a random number, and pauses for a set time to allow the bingo caller to announce it.
 			def play_bingo():
-				print (next_num)
-				print ('Confirming next number...')
-				time.sleep(5)
+				#Resets if the number has already been called
+				if next_num in already_called:
+					play_bingo()
+				#Otherwise, the number is stored with business as usual
+				else:
+					print (next_num)
+					already_called.append(next_num)
+					print ('Confirming next number...')
+					time.sleep(5)
 			#This function then runs for the amount of times that was earlier inputted on line 16	
 			for x in range (no_of_rounds):
 				play_bingo()
