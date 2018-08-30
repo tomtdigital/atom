@@ -58,6 +58,8 @@ def begin():
 					begin()
 				elif again == 'x':
 					print ('Goodbye!')
+					time.sleep(2)
+					exit()
 				#In case they enter a different value
 				else: 
 					play_again()
