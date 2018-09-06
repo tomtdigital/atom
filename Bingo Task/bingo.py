@@ -76,5 +76,9 @@ while again != 'y' and again != 'x':
 while again == 'y':
 	begin()
 	again = input('Would you like to play again? Enter \'y\' for yes and \'x\' to exit: ')
+	while again != 'y' and again != 'x':
+		again = input('Invalid input. Enter \'y\' for yes and \'x\' to exit: ')
+
 if again == 'x':
 	print ('Goodbye!')
+	time.sleep(2)
