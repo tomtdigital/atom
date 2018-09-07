@@ -12,9 +12,13 @@ time.sleep(5)
 
 #Main process
 def begin():
-	try: no_of_rounds = int(input('How many numbers would you like generated for this game? '))
-	except ValueError:
-		no_of_rounds = int(input('Please enter a valid number '))
+	while True:
+		try: 
+			no_of_rounds = int(input('How many numbers would you like generated for this game? '))
+		except ValueError:
+			print ('Sorry, this wasn\'t a number!')
+		else:
+			break
 	#Checks if the user is happy with the amount of numbers being called in the game
 	confirm_rounds = input('Are you sure? Enter \'y\' for yes and \'n\' for no: ')
 	#Loops until valid input
@@ -23,9 +27,13 @@ def begin():
 	
 	#Loops until user sure about the number of rounds
 	while confirm_rounds == 'n':
-		try: no_of_rounds = int(input('How many numbers would you like generated for this game? '))
-		except ValueError:
-			no_of_rounds = int(input('Please enter a valid number '))
+		while True:
+			try: 
+				no_of_rounds = int(input('How many numbers would you like generated for this game? '))
+			except ValueError:
+				print ('Sorry, this wasn\'t a number!')
+			else:
+				break
 		confirm_rounds = input('Are you sure? Enter \'y\' for yes and \'n\' for no: ')
 		while confirm_rounds != 'y' and confirm_rounds != 'n':
 			confirm_rounds = input('Invalid input. Enter \'y\' for yes and \'n\' for no: ')
@@ -76,9 +84,5 @@ while again != 'y' and again != 'x':
 while again == 'y':
 	begin()
 	again = input('Would you like to play again? Enter \'y\' for yes and \'x\' to exit: ')
-	while again != 'y' and again != 'x':
-		again = input('Invalid input. Enter \'y\' for yes and \'x\' to exit: ')
-
 if again == 'x':
 	print ('Goodbye!')
-	time.sleep(2)
